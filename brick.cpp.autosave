@@ -1,0 +1,43 @@
+
+// Calse Ladrillo
+#include "brick.h"
+#include <iostream>
+
+// El constructor carga la imagen del ladrillo 
+Ladrillo::Ladrillo(int x, int y) {
+
+  image.load(":image/brickie.png");
+  destroyed = false;
+  rect = image.rect();
+  rect.translate(x, y);
+}
+
+Ladrillo::~Ladrillo() {
+
+  //std::cout << ("Brick deleted") << std::endl;
+}
+
+QRect Ladrillo::getRect() {
+
+  return rect;
+}
+
+void Ladrillo::setRect(QRect rct) {
+
+  rect = rct;
+}
+
+QImage & Ladrillo::getImage() {
+
+  return image;
+}
+
+bool Ladrillo::isDestroyed() {
+
+  return destroyed;
+}
+
+void Ladrillo::setDestroyed(bool destr) {
+
+  destroyed = destr;
+}
